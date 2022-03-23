@@ -2,7 +2,7 @@
 
 ## Description<br>
 
-Aether is a fullstack weather application. It implements a full functional login system to personalise the experience. For the purpose above, its backend created using ExpressJS, MongoDB as its database and JWT.js for authentication purposes. As for its frontend a combination of ReactJS with **typescript** gets the job done. The tech stack i used, comes somewhat under the MERN stack.
+Aeolus is a fullstack weather application. It implements a full functional login system to personalise the experience. For the purpose above, its backend created using ExpressJS, MongoDB as its database and JWT.js for authentication purposes. As for its frontend a combination of ReactJS with **typescript** gets the job done. The tech stack i used, comes somewhat under the MERN stack.
 
 ## Frontend<br>
 
