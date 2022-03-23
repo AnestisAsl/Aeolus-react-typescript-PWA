@@ -67,5 +67,8 @@ npm install --save-dev @testing-library/react jest @types/jest
 
 ```
 
+## Currently testing some new weather apis<br>
+The url for the api call is empty right now(backend/routes/userRoutes.js at fetchLocationData,fetchWeatherData functions)
+
 
 
