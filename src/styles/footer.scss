@@ -1,0 +1,13 @@
+$footerColor: #333d29;
+$footerFontColor: #c2c5aa;
+footer {
+  background-color: $footerColor;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  color: $footerFontColor;
+  p {
+    display: inline !important;
+  }
+}

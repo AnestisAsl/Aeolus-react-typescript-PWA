@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap");
+
+$headerColor: #333d29;
+$titleColor: #c2c5aa;
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: $headerColor;
+  display: flex;
+  width: 100%;
+  h2 {
+    font-family: "Cinzel Decorative", cursive;
+    color: $titleColor;
+    font-size: xxx-large;
+  }
+  z-index: 1;
+}

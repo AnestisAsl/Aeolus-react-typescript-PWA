@@ -1,0 +1,174 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  width: 100vw;
+  height: 100vh;
+}
+.messagePageNotFound {
+  font-size: 5vw !important;
+  color: grey;
+  padding-top: 15px;
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  z-index: -1;
+}
+.thunder {
+  font-size: 15vw !important;
+  color: yellow;
+  position: relative;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  animation: linear infinite alternate;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+.pageNotFoundIcons {
+  font-size: 20vw !important;
+  color: grey;
+  position: relative;
+  animation: linear infinite alternate;
+
+  &:first-child {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    animation-name: leftToRight;
+    animation-duration: 3s;
+  }
+  &:nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    animation-name: bottomToTop;
+    animation-duration: 1.5s;
+  }
+  &:nth-child(3) {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    animation-name: RightToLeft;
+    animation-duration: 3s;
+  }
+  &:nth-child(4) {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    animation-name: leftToRight;
+    animation-duration: 3s;
+  }
+  &:nth-child(5) {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    animation-name: bottomToTop;
+    animation-duration: 1.5s;
+  }
+  &:nth-child(6) {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    animation-name: RightToLeft;
+    animation-duration: 3s;
+  }
+}
+.pageNotFoundTitle {
+  font-size: 30vw !important;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  z-index: -2;
+}
+.backButton {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 5;
+}
+@-webkit-keyframes leftToRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: 80%;
+    color: black;
+  }
+}
+
+@keyframes leftToRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: 80%;
+    color: black;
+  }
+}
+
+@-webkit-keyframes bottomToTop {
+  from {
+    bottom: 0;
+    color: black;
+  }
+  to {
+    bottom: 20%;
+  }
+}
+
+@keyframes bottomToTop {
+  from {
+    bottom: 0;
+    color: black;
+  }
+  to {
+    bottom: 20%;
+  }
+}
+
+@-webkit-keyframes RightToLeft {
+  from {
+    right: 0;
+  }
+  to {
+    right: 80%;
+    color: black;
+  }
+}
+
+@keyframes RightToLeft {
+  from {
+    right: 0;
+  }
+  to {
+    right: 80%;
+    color: black;
+  }
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

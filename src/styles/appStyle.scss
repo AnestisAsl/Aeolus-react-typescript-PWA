@@ -1,0 +1,446 @@
+@import "header.scss";
+@import "buttons.scss";
+@import "footer.scss";
+@import "searchbar.scss";
+@import "locationList.scss";
+@import "wheel.scss";
+@import "toggleButton.scss";
+@import "charts.scss";
+@import "404.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+$light: #b6ad90;
+$lightFont: #333d29;
+$ligtFontList: #dba95f;
+$dark: #212f45;
+$darkFont: #006466;
+$darkFontList: #4d194d;
+
+body {
+  &.light {
+    background-color: $light;
+    color: $lightFont;
+    input {
+      background-color: $light;
+      caret-color: $lightFont;
+    }
+    .iconShadowMoon {
+      display: none;
+    }
+    .locationList {
+      background: $ligtFontList;
+    }
+
+    // .background {
+    //   font-size: 20vw;
+    //   z-index: -22;
+    //   position: absolute;
+    //   top: 20vw;
+    //   font-weight: bolder;
+    //   // background-image: url(../images/asd.jpg);
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   color: transparent;
+    //   background-clip: text;
+    //   -webkit-background-clip: text;
+    //   text-shadow: 17px 24px 38px #e85d04;
+    // }
+  }
+  &.dark {
+    background-color: $dark;
+    color: $darkFont;
+    input {
+      background-color: $darkFont;
+      caret-color: $light;
+    }
+    .iconShadowSun {
+      display: none;
+    }
+
+    // .rowContainer {
+    //   form {
+    //     box-shadow: 12px 12px 12px 12px $shadowMoon;
+    //   }
+    // }
+    .locationList {
+      background: $darkFontList;
+    }
+
+    .wheel {
+      span {
+        &:first-child {
+          background-color: $darkFont;
+        }
+        &:nth-child(2) {
+          background-color: $darkFont;
+        }
+        &:nth-child(3) {
+          background-color: $darkFont;
+        }
+        &:last-child {
+          background-color: $darkFont;
+        }
+        &:first-child::before {
+          background-color: black;
+        }
+        &:nth-child(2)::before {
+          background-color: black;
+        }
+        &:nth-child(3)::before {
+          background-color: black;
+        }
+        &:last-child::before {
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+.chartContainer {
+  width: 55vw;
+  .fade {
+    height: 46vh;
+    canvas {
+      height: 46vh !important;
+    }
+  }
+}
+.weatherDateDisplayContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+.errors {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  button {
+    margin: auto;
+    margin-top: 5px;
+  }
+}
+.container {
+  // background-image: url(../images/asd.jpg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  label {
+    margin-right: auto;
+    font-size: x-large;
+  }
+  h1 {
+    margin-bottom: 40px;
+    font-size: xxx-large;
+  }
+}
+
+.rowContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  .rightDiv {
+    margin-right: auto;
+  }
+  ul {
+    margin-right: auto;
+  }
+  form {
+    // box-shadow: 12px 12px 12px 12px $shadowSun;
+    input {
+      border-radius: 17px;
+      outline: none;
+    }
+  }
+
+  div {
+    p {
+      display: inline-flex;
+    }
+  }
+  span {
+    p {
+      font-size: x-large;
+    }
+    h1 {
+      font-size: xxx-large;
+    }
+  }
+  .signIcon {
+    margin-right: 5px;
+  }
+}
+.containerWeatherData {
+  @extend .container;
+  height: auto;
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  h3 {
+    font-size: 2.2rem;
+    margin-right: 1%;
+  }
+}
+.windDirectionContainer {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}
+.containerWheel {
+  @extend .container;
+  margin-left: auto;
+  padding: 60px;
+}
+.bold {
+  font-weight: bold;
+}
+
+.iconShadowSun {
+  position: absolute;
+  font-size: 200px;
+  top: 0px;
+  left: 50px;
+  // color: $shadowSun;
+}
+.iconShadowMoon {
+  position: absolute;
+  font-size: 200px;
+  top: 0px;
+  left: 50px;
+  // color: $shadowMoon;
+}
+
+.weatherDataContainer,
+.apiAnswer {
+  display: contents;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+$ipadMin: 490px;
+$ipadMax: 927px;
+$ipadProMax: 1050px;
+@media (min-width: $ipadMin) and (max-width: $ipadMax) {
+  * {
+    font-size: 25px !important;
+    h1 {
+      font-size: 40px !important;
+    }
+    h2 {
+      font-size: 35px !important;
+      svg {
+        font-size: 30px !important;
+      }
+    }
+    span {
+      font-size: 40px !important;
+
+      p {
+        font-size: 35px !important;
+      }
+      a {
+        font-size: 35px !important;
+      }
+    }
+    form {
+      margin-right: unset !important;
+      input {
+        min-width: 600px;
+        min-height: 70px;
+        font-size: 35px;
+      }
+      .signIcon {
+        font-size: 40px !important;
+      }
+      label {
+        font-size: 35px !important;
+      }
+    }
+  }
+  .eyeDiv,
+  .visiblePasswordButtonIn {
+    font-size: 40px !important;
+  }
+
+  .containerWheel,
+  .iconShadowSun,
+  .iconShadowMoon {
+    display: none;
+  }
+  .containerWeatherData {
+    height: auto;
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-left: 1%;
+      margin-right: 1%;
+    }
+    h3 {
+      font-size: 2.2rem;
+      margin-right: 1%;
+    }
+  }
+  .locationList,
+  .deleteButton {
+    display: none;
+  }
+  .chartContainer {
+    width: 80vw;
+    .fade {
+      height: 46vh;
+      height: 46vh;
+      canvas {
+        height: 46vh !important;
+      }
+    }
+  }
+  .prev,
+  .next {
+    font-size: 40px !important;
+  }
+  .buttonToLocationList {
+    display: none;
+  }
+}
+
+@media (min-width: $ipadMax) and (max-width: $ipadProMax) {
+  p,
+  li {
+    font-size: 35px !important;
+  }
+  span {
+    p {
+      font-size: 25px !important;
+    }
+  }
+  button {
+    font-size: 35px !important;
+  }
+  h1 {
+    font-size: 50px !important;
+  }
+  form {
+    margin-right: unset !important;
+    input {
+      min-width: 700px;
+      min-height: 80px;
+      font-size: 35px;
+    }
+    .signIcon {
+      font-size: 50px !important;
+    }
+    label {
+      font-size: 50px !important;
+    }
+  }
+  .prev,
+  .next {
+    font-size: 60px !important;
+  }
+  .buttonToLocationList {
+    display: none;
+  }
+}
+
+@media (max-width: $ipadMin) {
+  * {
+    font-size: 15px !important;
+    h1 {
+      font-size: 35px !important;
+    }
+    h2 {
+      font-size: 30px !important;
+      svg {
+        font-size: 30px !important;
+      }
+    }
+    span {
+      font-size: 20px !important;
+      p {
+        font-size: 20px !important;
+      }
+      a {
+        font-size: 25px !important;
+      }
+    }
+    form {
+      margin-right: unset !important;
+      input {
+        min-width: 300px;
+        min-height: 50px;
+        font-size: 35px;
+      }
+      .signIcon {
+        font-size: 30px !important;
+      }
+      label {
+        font-size: 25px !important;
+      }
+    }
+  }
+  .eyeDiv,
+  .visiblePasswordButtonIn {
+    font-size: 40px !important;
+  }
+
+  .containerWheel,
+  .iconShadowSun,
+  .iconShadowMoon {
+    display: none;
+  }
+  .containerWeatherData {
+    height: auto;
+    p {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-left: 1%;
+      margin-right: 1%;
+    }
+    h3 {
+      font-size: 3.2rem;
+      margin-right: 1%;
+    }
+  }
+  .locationList,
+  .deleteButton {
+    display: none;
+  }
+  .chartContainer {
+    width: 80vw;
+    .fade {
+      height: 46vh;
+      canvas {
+        height: 46vh !important;
+      }
+    }
+  }
+  .prev,
+  .next {
+    font-size: 40px !important;
+  }
+  .buttonToLocationList {
+    display: none;
+  }
+}

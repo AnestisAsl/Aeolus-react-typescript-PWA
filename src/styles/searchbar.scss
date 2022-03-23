@@ -1,0 +1,25 @@
+@import "buttons.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  min-width: 400px;
+  min-height: 50px;
+  font-size: 155%;
+}
+.locationOption {
+  min-width: unset;
+  min-height: unset;
+  font-size: unset;
+}
+
+.searchBar {
+  box-shadow: none !important;
+  padding-bottom: 5px;
+  input {
+    border-radius: 17px;
+    outline: none;
+  }
+}

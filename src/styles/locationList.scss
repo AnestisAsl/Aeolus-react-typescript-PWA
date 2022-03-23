@@ -1,0 +1,67 @@
+.locationList {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  left: 0%;
+  justify-content: center;
+  align-items: center;
+  width: 12vw;
+  animation: slidein 1000ms;
+  ul {
+    div {
+      color: #333d29;
+    }
+  }
+}
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.buttonToLocationList {
+  z-index: 1;
+  position: fixed;
+  left: 1%;
+  top: 11%;
+  cursor: pointer;
+  opacity: 1;
+}
+.buttonToLocationListAnimated {
+  @extend .buttonToLocationList;
+  animation: fadeOut 1000ms forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.buttonToLocationListClose {
+  @extend .buttonToLocationList;
+  opacity: 0 !important;
+  left: 8%;
+}
+.buttonToLocationListCloseAnimated {
+  @extend .buttonToLocationList;
+  left: 8%;
+
+  animation: fadeIn 1000ms forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1 !important;
+  }
+}
