@@ -139,9 +139,24 @@ router.post("/displayMyLocations", async (req, res) => {
   }
 });
 
-router.post("/fetchLocationData", async (req, res) => {});
+router.post("/fetchLocationData", async (req, res) => {
+  try {
+    console.log("about to fetch weather data locations");
+    const location = req.body.locationParameter;
+    console.log(location);
+    const url = `the url for the  weather api you prefer`;
+    axios.get(url).then((response) => {
+      console.log(response.data);
+      return res.json({
+        locationData: response.data,
+      });
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }});
 
-router.post("/fetchWeatherData", async (req, res) => { try {
+router.post("/fetchWeatherData", async (req, res) => {
+  try {
     console.log("about to fetch weather data locations");
 
     const woeid = req.body.woeid;
