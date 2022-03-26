@@ -11,6 +11,7 @@ Aeolus is a fullstack weather application. It implements a full functional login
 * React JS
 * TypeScript
 * JWT.js 
+* Framer Motion
 * react-router V5 for routing 
 * axios for backend and api calls
 * SASS
