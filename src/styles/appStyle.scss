@@ -18,12 +18,17 @@
   justify-content: center;
 }
 
-$light: #b6ad90;
+$light: #c2c5aa;
 $lightFont: #333d29;
 $ligtFontList: #dba95f;
 $dark: #212f45;
 $darkFont: #006466;
 $darkFontList: #4d194d;
+
+$textColorCommonWhite: #c2c5aa;
+$textColorCommonBlack: #333d29;
+$headerButton: #c2c5aa;
+$headerButtonHoverColor: #a68a64;
 
 body {
   &.light {
@@ -32,28 +37,63 @@ body {
     input {
       background-color: $light;
       caret-color: $lightFont;
+      color: $lightFont;
+      border-color: $lightFont;
     }
     .iconShadowMoon {
       display: none;
     }
     .locationList {
       background: $ligtFontList;
+      ul {
+        div {
+          color: $lightFont;
+        }
+      }
     }
-
-    // .background {
-    //   font-size: 20vw;
-    //   z-index: -22;
-    //   position: absolute;
-    //   top: 20vw;
-    //   font-weight: bolder;
-    //   // background-image: url(../images/asd.jpg);
-    //   background-repeat: no-repeat;
-    //   background-size: cover;
-    //   color: transparent;
-    //   background-clip: text;
-    //   -webkit-background-clip: text;
-    //   text-shadow: 17px 24px 38px #e85d04;
-    // }
+    .buttonToLocationList {
+      background: $ligtFontList;
+      color: $lightFont;
+    }
+  }
+  header {
+    background-color: $lightFont;
+    h2 {
+      color: $light;
+    }
+  }
+  footer {
+    color: $light;
+    background-color: $lightFont;
+  }
+  .commonButtonFeatures {
+    color: $light;
+    &:hover {
+      color: $light;
+    }
+  }
+  .buttonsDiv {
+    button {
+      background-color: $headerButton;
+      color: $textColorCommonBlack;
+      &:hover {
+        background-color: $headerButtonHoverColor;
+        color: $textColorCommonWhite;
+      }
+    }
+  }
+  .searchButton,
+  .saveToMyListButton,
+  .deleteButton,
+  .clearButton,
+  .submitButton,
+  .backButton,
+  .clearButton {
+    background-color: $textColorCommonBlack;
+    &:hover {
+      background: $headerButtonHoverColor;
+      color: $textColorCommonBlack;
+    }
   }
   &.dark {
     background-color: $dark;
@@ -61,20 +101,65 @@ body {
     input {
       background-color: $darkFont;
       caret-color: $light;
+      color: $light;
+      border-color: $light;
     }
     .iconShadowSun {
       display: none;
     }
 
-    // .rowContainer {
-    //   form {
-    //     box-shadow: 12px 12px 12px 12px $shadowMoon;
-    //   }
-    // }
     .locationList {
       background: $darkFontList;
+      ul {
+        div {
+          color: $light;
+        }
+      }
+    }
+    .buttonToLocationList {
+      background: $darkFontList;
+      color: $light;
+    }
+    header {
+      background-color: $darkFontList;
+      h2 {
+        color: $darkFont;
+      }
+    }
+    footer {
+      color: $darkFont;
+      background-color: $darkFontList;
     }
 
+    .buttonsDiv {
+      button {
+        background-color: $darkFont;
+        color: $light;
+        &:hover {
+          background-color: $light;
+          color: $darkFont;
+        }
+      }
+    }
+    .searchButton,
+    .saveToMyListButton,
+    .backButton {
+      background-color: $darkFontList;
+      &:hover {
+        background: $light;
+        color: $darkFont;
+      }
+    }
+    .deleteButton,
+    .clearButton,
+    .submitButton,
+    .clearButton {
+      background-color: $darkFont;
+      &:hover {
+        background: $light;
+        color: $darkFont;
+      }
+    }
     .wheel {
       span {
         &:first-child {
@@ -130,9 +215,6 @@ body {
   }
 }
 .container {
-  // background-image: url(../images/asd.jpg);
-  // background-repeat: no-repeat;
-  // background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,7 +241,6 @@ body {
     margin-right: auto;
   }
   form {
-    // box-shadow: 12px 12px 12px 12px $shadowSun;
     input {
       border-radius: 17px;
       outline: none;
@@ -220,14 +301,12 @@ td {
   font-size: 200px;
   top: 0px;
   left: 50px;
-  // color: $shadowSun;
 }
 .iconShadowMoon {
   position: absolute;
   font-size: 200px;
   top: 0px;
   left: 50px;
-  // color: $shadowMoon;
 }
 
 .weatherDataContainer,

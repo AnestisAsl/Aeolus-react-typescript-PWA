@@ -1,34 +1,14 @@
-$textColorCommonWhite: #c2c5aa;
-$textColorCommonBlack: #333d29;
-
-$headerButton: #c2c5aa;
-$headerButtonHoverColor: #a68a64;
-
-$submitButton: $textColorCommonBlack;
-$submitButtonHoverColor: #a68a64;
-
-$searchButton: $textColorCommonBlack;
-$searchButtonHoverColor: #a68a64;
-
-$backButton: #e8ac65;
-$backButtonHoverColor: #d66d22;
-
-$logoutButton: #c2c5aa;
-$logoutButtonHoverColor: #a68a64;
-
 .commonButtonFeatures {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 15px;
   transition: 0.8s;
-  color: $textColorCommonWhite;
   border: none;
   &:focus {
     outline: none;
   }
   &:hover {
     border: none;
-    color: $textColorCommonWhite;
   }
 }
 
@@ -39,84 +19,40 @@ $logoutButtonHoverColor: #a68a64;
   button {
     @extend .commonButtonFeatures;
     margin: 5px;
-    background-color: $headerButton;
     font-size: 12px;
-    color: $textColorCommonBlack;
-    &:hover {
-      background-color: $headerButtonHoverColor;
-      color: $textColorCommonWhite;
-    }
-  }
-  .logOut {
-    color: $textColorCommonBlack;
-    background-color: $logoutButton;
-    &:hover {
-      background-color: $logoutButtonHoverColor;
-      color: $textColorCommonWhite;
-    }
   }
 }
 .searchButton {
   @extend .commonButtonFeatures;
   margin-left: auto;
   margin-top: 5px;
-  background: $searchButton;
-  &:hover {
-    background: $searchButtonHoverColor;
-    color: $textColorCommonBlack;
-  }
 }
 
 .submitButton {
   @extend .commonButtonFeatures;
   margin-left: auto;
   margin-top: 5px;
-  background: $submitButton;
-  &:hover {
-    background: $submitButtonHoverColor;
-    color: $textColorCommonBlack;
-  }
 }
 
 .backButton {
   @extend .commonButtonFeatures;
   margin-top: 25px;
-  background: $backButton;
-  &:hover {
-    background: $backButtonHoverColor;
-    color: $textColorCommonBlack;
-  }
 }
 .clearButton {
   @extend .commonButtonFeatures;
   margin-left: auto;
   margin-top: 5px;
   margin-bottom: 5px;
-  background: $submitButton;
-  &:hover {
-    background: $submitButtonHoverColor;
-  }
   float: right;
 }
 .saveToMyListButton {
   @extend .commonButtonFeatures;
   margin-left: auto;
   margin-top: 5px;
-  background: $searchButton;
-  &:hover {
-    background: $searchButtonHoverColor;
-    color: $textColorCommonBlack;
-  }
 }
+
 .deleteButton {
   @extend .commonButtonFeatures;
-  background: $logoutButton;
-  color: $textColorCommonBlack;
-
-  &:hover {
-    background: $logoutButtonHoverColor;
-    color: $textColorCommonWhite;
-  }
 }
 .visiblePasswordButton {
   margin-top: 20px;
@@ -130,23 +66,23 @@ $logoutButtonHoverColor: #a68a64;
   margin-top: 100px;
 }
 
-.spin {
-  animation: spin 1s linear infinite;
-}
-.stopSpin {
-  animation-play-state: paused;
-}
-.spinButton {
-  @extend .commonButtonFeatures;
-  background: $submitButton;
-  &:hover {
-    background: $submitButtonHoverColor;
-  }
-  z-index: 10;
-}
+// .spin {
+//   animation: spin 1s linear infinite;
+// }
+// .stopSpin {
+//   animation-play-state: paused;
+// }
+// .spinButton {
+//   @extend .commonButtonFeatures;
+//   background: $submitButton;
+//   &:hover {
+//     background: $submitButtonHoverColor;
+//   }
+//   z-index: 10;
+// }
 
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+// @keyframes spin {
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
