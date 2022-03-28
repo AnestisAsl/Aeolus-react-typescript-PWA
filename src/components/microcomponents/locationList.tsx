@@ -2,7 +2,9 @@ import * as React from "react";
 import { FC, useEffect, useState, useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import { InputContext } from "../../context/inputContext";
+import { DisplayListContext } from "../../context/displayListContext";
 import MessageNotifications from "../messageNotifications";
+import { motion } from "framer-motion";
 
 import Axios from "axios";
 
@@ -10,9 +12,11 @@ const LocationList: FC = () => {
   const { userData, setUserData } = useContext(UserContext);
   const [locations, setLocations] = useState<string[]>([]);
   const { inputData, setInputData } = useContext(InputContext);
+  const { displayList, setDisplayList } = useContext(DisplayListContext);
   const [message, setMessage] = useState<string>();
 
   useEffect(() => {
+    console.log(displayList);
     const displayLocations = async () => {
       if (userData.user) {
         const userId = userData.user.id;
@@ -30,7 +34,19 @@ const LocationList: FC = () => {
   }, [inputData.isAdded]);
 
   return (
-    <div className="locationList">
+    <motion.div
+      className="locationList"
+      animate={{
+        x: 50,
+        opacity: 1,
+        scale: [0, 1.4, 1],
+        borderRadius: ["5%", "5%", "25%"],
+      }}
+      initial={{
+        x: -100,
+        opacity: 0,
+      }}
+    >
       {message && (
         <MessageNotifications
           message={message}
@@ -39,7 +55,18 @@ const LocationList: FC = () => {
       )}
       <ul>
         {locations.map((location) => (
-          <div key={location}>
+          <motion.div
+            key={location}
+            animate={{
+              opacity: 1,
+            }}
+            initial={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 1,
+            }}
+          >
             <input
               className="locationOption"
               type="radio"
@@ -50,7 +77,7 @@ const LocationList: FC = () => {
             />
             <label>{location}</label>
             <br></br>
-          </div>
+          </motion.div>
         ))}
 
         <button
@@ -77,7 +104,7 @@ const LocationList: FC = () => {
           DELETE
         </button>
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
