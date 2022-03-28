@@ -19,11 +19,7 @@ const Home: FC = () => {
             Aeolus is a project just for web development practise.
             <br />
             <span className="bold"> Frequently asked questions:</span> <br />
-            Which api is used to fetch weather data? <br />
-            <span className="bold"> MetaweatherApi: </span>
-            <a href="https://en.wikipedia.org/wiki/Aeolus">
-              MetaweatherApi
-            </a>{" "}
+         
             <br />
             How you came up with this name? <br />
             Read this :{" "}
