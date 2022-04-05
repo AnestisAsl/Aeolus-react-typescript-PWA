@@ -68,6 +68,10 @@ npm install --save-dev @testing-library/react jest @types/jest
 
 ```
 
+## To complete the PWA experience  : <br>
+### (.png files are not provided)<br>
+
+Create a folder with name "aeolus icons". Inside put the .png files in different sizes, name them "size".png (check manifest.json). 
 
 ## Currently working on :<br>
 
