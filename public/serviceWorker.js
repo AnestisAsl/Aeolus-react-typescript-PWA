@@ -1,50 +1,46 @@
 const cacheData = "cacheData";
-const urlsToCache = [
-  "index.html",
-  "offline.html",
-  "static/js/main.chunk.js",
-  "static/js/0.chunk.js",
-  "static/js/bundle.js",
-];
+const dynamicCahe = "dynamicCache";
+const urlsToCache = ["index.html", "offline.html"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheData).then((cache) => {
-      console.log("Opened cache");
-
+      console.log("Serviceworker has been installed and cache is open.");
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-// ** an uparxei sto catch kanto fetch me to response an den yparxei kanto
-// **  fetch(event.request) dld apo to diktyo kai an ayto apotyxei eimai offline
+// ** If the fetch request matches the urls we cached, fetch it from catch.
+// ** If it doesn't do the request.
 self.addEventListener("fetch", (event) => {
+  console.log("Fetch is happening");
   event.respondWith(
     caches.match(event.request).then(function (response) {
-      console.log(response);
       return (
-        response ||
-        fetch(event.request).catch(() => caches.match("offline.html"))
+        response || fetch(event.request)
+        // .then((fetchRes) => {
+        //   return caches.open();
+        // })
+        // .catch(() => caches.match("offline.html"))
       );
     })
   );
 });
 
-// Activate the SW
+// * Activate the SW
+// * Maybe in the future will have more caches so the old ones must be deleted.
+// * Delete all the old caches with name different
+// *  of the name we declare at the top of the file
 self.addEventListener("activate", (event) => {
-  const cacheWhitelist = [];
-  cacheWhitelist.push(cacheData);
-
+  console.log("Serviceworker is active");
   event.waitUntil(
-    caches.keys().then((cacheNames) =>
+    caches.keys().then((cacheNames) => {
       Promise.all(
-        cacheNames.map((cacheName) => {
-          if (!cacheWhitelist.includes(cacheName)) {
-            return caches.delete(cacheName);
-          }
-        })
-      )
-    )
+        cacheNames
+          .filter((cacheName) => cacheName !== cacheData)
+          .map((cacheName) => caches.delete())
+      );
+    })
   );
 });
