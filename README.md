@@ -76,9 +76,6 @@ Create a folder with name "aeolus icons". Inside put the .png files in different
 
 ## Currently working on :<br>
 
-### making aeolus a PWA
-
-
 ### new apis
 The url for the api call is empty right now(backend/routes/userRoutes.js at fetchLocationData,fetchWeatherData functions).
 There is right now a dummy object that represents the fetched weather object for testing purposes.
