@@ -2,11 +2,11 @@ import * as React from "react";
 import { FC, useState, useContext, useEffect } from "react";
 import { UserContext } from "../../context/userContext";
 import { InputContext } from "../../context/inputContext";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import WeatherData from "./weatherData";
 import SlideShow from "./slideshow";
-import Axios from "axios";
 import MessageNotifications from "../messageNotifications";
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import Axios from "axios";
 
 const SearchBar: FC = () => {
   const { userData, setUserData } = useContext(UserContext);
@@ -14,6 +14,7 @@ const SearchBar: FC = () => {
   const [message, setMessage] = useState<string>();
   const [loading, setLoading] = useState<boolean>(false);
   const [showCharts, setShowCharts] = useState<boolean>(false);
+  const [showBarcode, setShowBarcode] = useState<boolean>(false);
   const [displaySearchBar, setDisplaySearchBar] = useState<boolean>(true);
   const [day, setDay] = useState<number>(0);
   const [weatherData, setWeatherData] = useState<any>("none");
@@ -39,7 +40,7 @@ const SearchBar: FC = () => {
   const [windSpeedArray, setWindSpeedArray] = useState<number[]>([]);
   const [windCompassArray, setWindCompassArray] = useState<string[]>([]);
   const [visibilityArray, setVisibilityArray] = useState<number[]>([]);
-  const obj = {
+  let obj = {
     consolidated_weather: [
       {
         id: 6242237370335232,
@@ -212,7 +213,9 @@ const SearchBar: FC = () => {
   const setBooleanValuesCharts = (chartsBoolean: boolean) => {
     setShowCharts(chartsBoolean);
   };
-
+  const setBooleanValuesBarCode = (barcodeBoolean: boolean) => {
+    setShowBarcode(showBarcode);
+  };
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     setLoading(true);
@@ -224,6 +227,20 @@ const SearchBar: FC = () => {
   };
 
   const getWeatherData = async (locationParameter: any, day: number) => {
+    // * offline data
+    if (!obj.consolidated_weather) {
+      console.log("offline");
+      setMessage(
+        "Couldn't fetch data from the server.Here is your last search."
+      );
+      let offlineWeatherData: any = localStorage.getItem("weatherData");
+      obj = JSON.parse(offlineWeatherData);
+    } else {
+      // * if already exist delete the old one
+      if (localStorage.getItem("weatherData"))
+        localStorage.removeItem("weatherData");
+    }
+    localStorage.setItem("weatherData", JSON.stringify(obj));
     setWeatherData(obj.consolidated_weather);
     setDate(obj.consolidated_weather[day].applicable_date);
     setWeatherState(obj.consolidated_weather[day].weather_state_name);
@@ -326,6 +343,7 @@ const SearchBar: FC = () => {
                   >
                     SHOW CHARTS
                   </button>
+
                   <button
                     onClick={() => setBooleanValues()}
                     className="clearButton"
