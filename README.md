@@ -2,7 +2,7 @@
 
 ## Description<br>
 
-Aeolus is a fullstack weather PWA. It implements a full functional login system to personalise the experience. For the purpose above, its backend created using ExpressJS, MongoDB as its database and JWT.js for authentication purposes. As for its frontend a combination of ReactJS with **TypeScript** gets the job done. The tech stack i used, comes somewhat under the MERN stack. Aeolus can be classified as PWA, is installable(as you can see the installation button on the top of the page),responsive and offers offline experience.
+Aeolus is a fullstack weather PWA. It implements a full functional login system to personalise the experience. For the purpose above, its backend created using ExpressJS, MongoDB as its database and JWT.js for authentication purposes. As for its frontend a combination of ReactJS with **TypeScript** gets the job done. The tech stack i used, comes somewhat under the MERN stack. Aeolus can be classified as PWA, is installable(as you can see the installation button on the top of the page),responsive and offers offline experiences(even offline data).
 ![lighthouseSS](https://user-images.githubusercontent.com/25753991/162470257-4f96d26c-fc53-4e2a-858b-a90729ae3331.jpg)
 
 ## Frontend<br>
