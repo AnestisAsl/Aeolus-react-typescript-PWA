@@ -318,14 +318,14 @@ td {
   flex-direction: column;
 }
 
-$ipadMin: 490px;
-$ipadMax: 927px;
-$ipadProMax: 1050px;
+$ipadMin: 481px;
+$ipadMax: 768px;
+// *ipads,tablets
 @media (min-width: $ipadMin) and (max-width: $ipadMax) {
   * {
-    font-size: 25px !important;
+    font-size: 14px !important;
     h1 {
-      font-size: 40px !important;
+      font-size: 30px !important;
     }
     h2 {
       font-size: 35px !important;
@@ -333,41 +333,35 @@ $ipadProMax: 1050px;
         font-size: 30px !important;
       }
     }
-    span {
-      font-size: 40px !important;
-
-      p {
-        font-size: 35px !important;
-      }
-      a {
-        font-size: 35px !important;
-      }
+    .bold {
+      font-size: 20px;
     }
     form {
       margin-right: unset !important;
       input {
-        min-width: 600px;
+        min-width: 445px;
         min-height: 70px;
-        font-size: 35px;
+        font-size: 20px !important;
       }
-      .signIcon {
-        font-size: 40px !important;
-      }
+
       label {
         font-size: 35px !important;
       }
     }
   }
+  footer {
+    * {
+      font-size: 12px !important;
+    }
+  }
   .eyeDiv,
   .visiblePasswordButtonIn {
-    font-size: 40px !important;
+    margin-top: 70px;
+    svg {
+      font-size: 20px !important;
+    }
   }
 
-  .containerWheel,
-  .iconShadowSun,
-  .iconShadowMoon {
-    display: none;
-  }
   .containerWeatherData {
     height: auto;
     p {
@@ -382,7 +376,9 @@ $ipadProMax: 1050px;
     }
   }
   .locationList,
-  .deleteButton {
+  .deleteButton,
+  .buttonToLocationList,
+  .saveToMyListButton {
     display: none;
   }
   .chartContainer {
@@ -399,50 +395,70 @@ $ipadProMax: 1050px;
   .next {
     font-size: 40px !important;
   }
-  .buttonToLocationList {
-    display: none;
-  }
 }
-
-@media (min-width: $ipadMax) and (max-width: $ipadProMax) {
-  p,
-  li {
-    font-size: 35px !important;
-  }
+// *desktops
+@media (min-width: $ipadMax) {
   span {
     p {
       font-size: 25px !important;
     }
   }
   button {
-    font-size: 35px !important;
+    font-size: 15px !important;
   }
   h1 {
-    font-size: 50px !important;
+    font-size: 30px !important;
   }
+  h2 {
+    font-size: 35px !important;
+  }
+  footer {
+    * {
+      font-size: 15px !important;
+    }
+  }
+
   form {
     margin-right: unset !important;
     input {
-      min-width: 700px;
-      min-height: 80px;
-      font-size: 35px;
+      min-width: 400px;
+      min-height: 60px;
+      font-size: 25px;
     }
-    .signIcon {
-      font-size: 50px !important;
-    }
+
     label {
-      font-size: 50px !important;
+      font-size: 30px !important;
     }
   }
+  .weatherDataContainer {
+    height: auto;
+    h1 {
+      font-size: 1.4rem !important;
+    }
+    svg {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-left: 1%;
+      margin-right: 1%;
+    }
+    h3 {
+      font-size: 1.2rem;
+      margin-right: 1%;
+    }
+    canvas {
+      width: 10rem;
+    }
+  }
+
   .prev,
   .next {
-    font-size: 60px !important;
-  }
-  .buttonToLocationList {
-    display: none;
+    font-size: 20px !important;
   }
 }
-
+// * mobile
 @media (max-width: $ipadMin) {
   * {
     font-size: 15px !important;
@@ -455,15 +471,10 @@ $ipadProMax: 1050px;
         font-size: 30px !important;
       }
     }
-    span {
+    .bold {
       font-size: 20px !important;
-      p {
-        font-size: 20px !important;
-      }
-      a {
-        font-size: 25px !important;
-      }
     }
+
     form {
       margin-right: unset !important;
       input {
@@ -471,12 +482,15 @@ $ipadProMax: 1050px;
         min-height: 50px;
         font-size: 35px;
       }
-      .signIcon {
-        font-size: 30px !important;
-      }
+
       label {
         font-size: 25px !important;
       }
+    }
+  }
+  footer {
+    * {
+      font-size: 10px !important;
     }
   }
   .eyeDiv,
@@ -484,11 +498,6 @@ $ipadProMax: 1050px;
     font-size: 40px !important;
   }
 
-  .containerWheel,
-  .iconShadowSun,
-  .iconShadowMoon {
-    display: none;
-  }
   .containerWeatherData {
     height: auto;
     p {
@@ -503,7 +512,9 @@ $ipadProMax: 1050px;
     }
   }
   .locationList,
-  .deleteButton {
+  .deleteButton,
+  .buttonToLocationList,
+  .saveToMyListButton {
     display: none;
   }
   .chartContainer {
@@ -518,8 +529,5 @@ $ipadProMax: 1050px;
   .prev,
   .next {
     font-size: 40px !important;
-  }
-  .buttonToLocationList {
-    display: none;
   }
 }
