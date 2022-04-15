@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Component } from "react";
 import { AiFillCloud, AiFillThunderbolt } from "react-icons/ai";
 
 import { useHistory } from "react-router-dom";

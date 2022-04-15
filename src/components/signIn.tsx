@@ -2,12 +2,9 @@ import * as React from "react";
 import { useContext, FC, useState, useEffect } from "react";
 import { UserContext } from "../context/userContext";
 import { useHistory } from "react-router-dom";
-import Axios from "axios";
-import MessageNotifications from "./messageNotifications";
-import { FaUserAlt } from "react-icons/fa";
-import { RiLockPasswordFill, RiMoonClearLine } from "react-icons/ri";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-import { WiSunrise } from "react-icons/wi";
+import MessageNotifications from "./messageNotifications";
+import Axios from "axios";
 
 const SignIn: FC = () => {
   const [email, setEmail] = useState<string>();
@@ -30,7 +27,7 @@ const SignIn: FC = () => {
         token: loginRes.data.token,
         user: loginRes.data.user,
       });
-      localStorage.setItem("auth-token", loginRes.data.token);
+      localStorage.setItem("x-auth-token", loginRes.data.token);
       localStorage.setItem("auth-user", JSON.stringify(loginRes.data.user));
 
       history.push("/home");

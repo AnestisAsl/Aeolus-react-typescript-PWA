@@ -1,12 +1,12 @@
 import * as React from "react";
-import { FC } from "react";
-
+import { FC, useEffect } from "react";
 import { IoRainyOutline, IoSnowSharp } from "react-icons/io5";
 import { WiSleet, WiCelsius } from "react-icons/wi";
 import { RiHailLine, RiCloudFill, RiSunCloudyLine } from "react-icons/ri";
 import { IoIosThunderstorm } from "react-icons/io";
 import { FaCloudRain, FaCloudSunRain } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
+import bwipjs from "bwip-js";
 
 import {
   BsArrowDownLeft,
@@ -234,7 +234,32 @@ const WeatherData: FC<WeatherDataProps> = ({
       return typeOfVisibilityState;
     }
   };
-
+  const createBarcode = () => {
+    try {
+      let canvas = bwipjs.toCanvas("barcode", {
+        bcid: "datamatrix",
+        text:
+          weather_state_name +
+          " " +
+          JSON.stringify(temperature) +
+          " " +
+          JSON.stringify(wind) +
+          " " +
+          humidity +
+          " " +
+          visibility,
+        scale: 4,
+        height: 15,
+        includetext: false,
+        textxalign: "center",
+      });
+    } catch (e) {
+      console.log("error", e);
+    }
+  };
+  useEffect(() => {
+    createBarcode();
+  }, []);
   return (
     <div className="containerWeatherData">
       <div className="rowContainer">
@@ -282,6 +307,7 @@ const WeatherData: FC<WeatherDataProps> = ({
           {visibility.toFixed(2)} mph {matchVisibilityValuesWithText()}{" "}
         </p>
       </div>
+      <canvas id="barcode"></canvas>
     </div>
   );
 };

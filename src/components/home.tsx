@@ -1,7 +1,6 @@
 import * as React from "react";
 import Footer from "./microcomponents/footer";
 import Header from "./microcomponents/header";
-import Wheel from "./microcomponents/wheel";
 
 import { FC } from "react";
 
@@ -19,8 +18,9 @@ const Home: FC = () => {
             Aeolus is a project just for web development practise.
             <br />
             <span className="bold"> Frequently asked questions:</span> <br />
-         
-            <br />
+            Which api is used to fetch weather data? <br />
+            <span className="bold"> MetaweatherApi: </span>
+            <a href="https://www.metaweather.com/api/">MetaweatherApi</a> <br />
             How you came up with this name? <br />
             Read this :{" "}
             <a

@@ -8,7 +8,9 @@ const Footer: FC = () => {
         <div className="rightDiv">
           <p>
             What is Aelous? <br />
-            It's a simple weather app.
+            It's a simple weather app using the metaweahter api.
+            <br /> Link for api:
+            <a href="https://en.wikipedia.org/wiki/Aeolus">MetaweatherApi</a>
           </p>
           <p></p>
         </div>

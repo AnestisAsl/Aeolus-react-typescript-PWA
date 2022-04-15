@@ -22,14 +22,6 @@ const LoginHome: FC = () => {
     inputValue: "",
   });
   useEffect(() => {
-    var userObjFromLocalStorage: any = localStorage.getItem("auth-user");
-    var tokenFromLocalStorage: any = localStorage.getItem("x-auth-token");
-    if (userData.token === undefined) {
-      setUserData({
-        token: tokenFromLocalStorage,
-        user: JSON.parse(userObjFromLocalStorage),
-      });
-    }
     if (!localStorage.getItem("x-auth-token")) {
       history.push("/");
     }

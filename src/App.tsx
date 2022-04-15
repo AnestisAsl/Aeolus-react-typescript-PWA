@@ -1,22 +1,22 @@
 import React, { FC, useState, useEffect } from "react";
-import Axios from "axios";
-import "./styles/appStyle.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { UserContext } from "./context/userContext";
+import { useHistory } from "react-router-dom";
 import SignIn from "./components/signIn";
 import SignUp from "./components/signUp";
 import Home from "./components/home";
 import LoginHome from "./components/loginHome";
 import PageNotFound from "./components/404";
-
 import ToggleButton from "./components/microcomponents/toggleButton";
-
-import { UserContext } from "./context/userContext";
+import Axios from "axios";
+import "./styles/appStyle.css";
 
 const App: FC = () => {
   const [userData, setUserData] = useState<any>({
     token: undefined,
     user: undefined,
   });
+  const history = useHistory();
 
   useEffect(() => {
     const checkIfLoggedIn = async () => {
@@ -40,6 +40,7 @@ const App: FC = () => {
         });
       }
     };
+
     checkIfLoggedIn();
   }, []);
   return (
@@ -51,6 +52,7 @@ const App: FC = () => {
           <Route path="/signIn" exact component={SignIn} />
           <Route path="/signUp" exact component={SignUp} />
           <Route path="/home" exact component={LoginHome} />
+
           <Route path="/" component={PageNotFound} />
         </Switch>
       </UserContext.Provider>

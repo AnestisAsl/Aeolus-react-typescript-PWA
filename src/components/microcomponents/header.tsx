@@ -8,7 +8,6 @@ import { InputContext } from "../../context/inputContext";
 const Header: FC = () => {
   const history = useHistory();
   const { userData, setUserData } = useContext(UserContext);
-  const { inputData, setInputData } = useContext(InputContext);
 
   return (
     <header>
@@ -16,7 +15,8 @@ const Header: FC = () => {
         AEOLUS<GiTornado></GiTornado>
       </h2>
       <div className="buttonsDiv">
-        {localStorage.getItem("auth-token") ? (
+        {localStorage.getItem("x-auth-token") &&
+        window.location.href === "http://localhost:3000/home" ? (
           <button
             type="submit"
             className="logOut"
@@ -25,7 +25,9 @@ const Header: FC = () => {
                 token: undefined,
                 user: undefined,
               });
-              localStorage.setItem("auth-token", "");
+              localStorage.setItem("x-auth-token", "");
+              localStorage.setItem("auth-user", "");
+              localStorage.setItem("weatherData", "");
               history.push("/");
             }}
           >

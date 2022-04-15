@@ -3,9 +3,8 @@ import { FC, useEffect, useState, useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import { InputContext } from "../../context/inputContext";
 import { DisplayListContext } from "../../context/displayListContext";
-import MessageNotifications from "../messageNotifications";
 import { motion } from "framer-motion";
-
+import MessageNotifications from "../messageNotifications";
 import Axios from "axios";
 
 const LocationList: FC = () => {

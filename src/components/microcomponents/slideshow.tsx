@@ -1,11 +1,10 @@
 import * as React from "react";
-import { Component } from "react";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import BarChart from "./charts/barChart";
 import LineChart from "./charts/lineChart";
 import RadarChart from "./charts/radarChart";
 import LineChartWind from "./charts/lineChart2";
 import BubbleChart from "./charts/bubbleChart";
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 import { useEffect, useState } from "react";
 interface slideShowProps {
