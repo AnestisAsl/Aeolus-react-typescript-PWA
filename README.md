@@ -2,8 +2,11 @@
 
 ## Description<br>
 
-Aeolus is a fullstack weather PWA. It implements a full functional login system to personalise the experience. For the purpose above, its backend created using ExpressJS, MongoDB as its database and JWT.js for authentication purposes. As for its frontend a combination of ReactJS with **TypeScript** gets the job done. The tech stack i used, comes somewhat under the MERN stack. Aeolus can be classified as PWA, is installable(as you can see the installation button on the top of the page),responsive and offers offline experiences(even offline data). To complete the PWA experience the data are also provided at a barcode form.
+Aeolus is a fullstack weather PWA using the Metaweather API. It implements a full functional login system to personalise the experience. For the purpose above, its backend created using ExpressJS, MongoDB as its database and JWT.js for authentication purposes. As for its frontend a combination of ReactJS with **TypeScript** gets the job done. The tech stack i used, comes somewhat under the MERN stack. Aeolus can be classified as PWA, is installable(as you can see the installation button on the top of the page),responsive and offers offline experiences(even offline data). To complete the PWA experience the data are also provided at a barcode form.
 ![lighthouseSS](https://user-images.githubusercontent.com/25753991/162470257-4f96d26c-fc53-4e2a-858b-a90729ae3331.jpg)
+
+## Metaweather API
+https://www.metaweather.com/api/
 
 ## Frontend<br>
 
@@ -29,9 +32,10 @@ react npx create react app --typescript
 
 ```
 Install dependencies
+(You may need to use '@types/{name of the library}')
 
 ```
-npm install   react-chartjs-2 chart.js react-icons react-router-dom@5 axios react-jwt
+npm install   react-chartjs-2 chart.js react-icons react-router-dom@5 axios react-jwt @types/bwip-js
 
 ```
 
@@ -70,16 +74,15 @@ npm install --save-dev @testing-library/react jest @types/jest
 
 ```
 
-## To complete the PWA experience  : <br>
+## Actions before running it : <br>
 ### (.png files are not provided)<br>
 
 Create a folder with name "aeolus icons". Inside put the .png files in different sizes, name them "size".png (check manifest.json). 
 
-## Currently working on :<br>
+### .env file<br>
 
-### new apis
-The url for the api call is empty right now(backend/routes/userRoutes.js at fetchLocationData,fetchWeatherData functions).
-There is right now a dummy object that represents the fetched weather object for testing purposes.
+Create a .env file in the backend folder and inside it store your jwt password.
+JWT_PASSWORD={your password}
 
 
 
