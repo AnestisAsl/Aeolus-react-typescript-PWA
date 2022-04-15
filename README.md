@@ -32,7 +32,7 @@ react npx create react app --typescript
 
 ```
 Install dependencies
-(You may need to use '@types/{name of the library}')
+(You may need to use '@types/{name of the library}' cause TS)
 
 ```
 npm install   react-chartjs-2 chart.js react-icons react-router-dom@5 axios react-jwt @types/bwip-js
@@ -75,7 +75,7 @@ npm install --save-dev @testing-library/react jest @types/jest
 ```
 
 ## Actions before running it : <br>
-### (.png files are not provided)<br>
+### .png files are not provided<br>
 
 Create a folder with name "aeolus icons". Inside put the .png files in different sizes, name them "size".png (check manifest.json). 
 
