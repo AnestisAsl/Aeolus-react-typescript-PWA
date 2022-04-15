@@ -67,7 +67,7 @@ router.post("/login", async (req, res) => {
 });
 router.post("/isLoggedIn", async (req, res) => {
   try {
-    const token = req.header("auth-token"); //x-auth
+    const token = req.header("x-auth-token");
     if (!token) return res.json(false);
     const verified = jwt.verified(token, process.env.JWT_PASSWORD);
     if (!verified) return res.json(false);
@@ -80,7 +80,7 @@ router.post("/isLoggedIn", async (req, res) => {
   }
 });
 router.get("/", async (req, res) => {
-  const token = req.header("auth-token"); //x-auth
+  const token = req.header("x-auth-token");
   if (!token) return res.json(false);
   const verified = jwt.verified(token, process.env.JWT_PASSWORD);
   if (!verified) return res.json(false);
@@ -144,7 +144,7 @@ router.post("/fetchLocationData", async (req, res) => {
     console.log("about to fetch weather data locations");
     const location = req.body.locationParameter;
     console.log(location);
-    const url = `the url for the  weather api you prefer`;
+    const url = `https://www.metaweather.com/api/location/search/?query=${location}`;
     axios.get(url).then((response) => {
       console.log(response.data);
       return res.json({
@@ -153,7 +153,8 @@ router.post("/fetchLocationData", async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ error: err.message });
-  }});
+  }
+});
 
 router.post("/fetchWeatherData", async (req, res) => {
   try {
@@ -162,7 +163,7 @@ router.post("/fetchWeatherData", async (req, res) => {
     const woeid = req.body.woeid;
     console.log(woeid);
 
-    const url = ` the url for the  weather api you prefer`;
+    const url = `https://www.metaweather.com/api/location/${woeid}/`;
     axios.get(url).then((response) => {
       console.log(response.data);
       return res.json({
@@ -170,5 +171,7 @@ router.post("/fetchWeatherData", async (req, res) => {
       });
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });});
+    res.status(500).json({ error: err.message });
+  }
+});
 module.exports = router;
