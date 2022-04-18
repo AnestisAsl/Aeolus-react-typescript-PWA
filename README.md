@@ -45,6 +45,7 @@ npm install   react-chartjs-2 chart.js react-icons react-router-dom@5 axios reac
 
 An Express.js on top of node.js provides the main backend framework. MongoDB is used to store user infrormation and mongoose helps for the object modeling.
 
+
 ## Technologies Used<br>
 
 * Express JS
@@ -85,7 +86,7 @@ Create a folder with name "aeolus icons". Inside put the .png files in different
 Create a .env file in the backend folder and inside it store your jwt password.
 JWT_PASSWORD={your password}
 
-
-
+### MongoDB<br>
+MongoDB was installed locally to my machine(didn't use MongoDB Atlas), do the same and name the database AeolusDB.
 
 
