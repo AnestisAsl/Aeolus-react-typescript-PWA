@@ -9,9 +9,10 @@ Aeolus is a fullstack weather PWA using the [**Metaweather API**](https://www.me
 ## Metaweather API
 https://www.metaweather.com/api/
 
-## Frontend<br>
 
 ## Technologies Used<br>
+
+### Frontend<br>
 
 * React JS
 * TypeScript
@@ -24,7 +25,7 @@ https://www.metaweather.com/api/
 * Chart.js 
 * react-icons
 
-## Instalation<br>
+### Instalation<br>
 
 Create a react app with typescript template using node.js
 
@@ -41,12 +42,9 @@ npm install   react-chartjs-2 chart.js react-icons react-router-dom@5 axios reac
 ```
 
 
-## Backend<br>
+### Backend<br>
 
 An Express.js on top of node.js provides the main backend framework. MongoDB is used to store user infrormation and mongoose helps for the object modeling.
-
-
-## Technologies Used<br>
 
 * Express JS
 * MongoDB
@@ -55,7 +53,7 @@ An Express.js on top of node.js provides the main backend framework. MongoDB is 
 * bcrypt for hashing passwords
 * dotenv
 
-## Instalation<br>
+### Instalation<br>
 
 ```
 npm install --save express bcrypt cors mongoose dotenv
